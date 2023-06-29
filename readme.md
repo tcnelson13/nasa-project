@@ -16,9 +16,6 @@
 // Use pm2 monit to monitor CPU and Memory usage server
 // Use pm2 reload server // Zero downtime restarts
 
-// mongodb cred: nasa-api / 0RQ1sKWGkagbZbA0
-// connection string: mongodb+srv://nasa-api:0RQ1sKWGkagbZbA0@nasacluster.faylncx.mongodb.net/nasa?retryWrites=true&w=majority
-
 // mongoose - npm package for connecting to mongodb - async feature
 
 # SpaceX REST API
