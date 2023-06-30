@@ -23,3 +23,38 @@
 https://github.com/r-spacex/SpaceX-API
 
 # Trigger a build
+
+# Docker build - https://docs.docker.com/engine/reference/commandline/build/
+
+// This builds and tags our docker image
+docker build . -t tnelson13/nasa-project
+docker build . --platform linux/arm64 -t tnelson13/nasa-project-arm64
+
+// This runs the newly built docker container locally
+docker run -it -p 8000:8000 tnelson13/nasa-project
+
+// Login to docker
+docker login
+
+// This pushes our image out to docker hub
+docker push tnelson13/nasa-project
+
+# ssh into a computer
+
+`ssh tcnelson13@127.0.0.1
+we need a .pem public cert
+
+````ssh -i "tc-test-account.pem" ec2-user@ec2-3-83-81-119.compute-1.amazonaws.com
+
+In ssh, update everything
+```sudo yum update -y
+```sudo yum install docker
+```sudo service docker start
+```sudo docker info
+```sudo usermod -a -G docker ec2-user
+```exit
+```login to ssh again (principle of least privelege)
+```docker login
+```docker run --restart=always -p 8000:80 tnelson13/nasa-project
+// restart=always takes the place of pm2 in prod
+````
